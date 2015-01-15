@@ -6,5 +6,5 @@ description      'Installs/Configures mysql-apt-config'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 depends           'dpkg_package'
-supports          'ubundu', '>=12'
-supports          'debian', '>=7'
+supports          'ubundu', '>=12.04'
+supports          'debian', '>=7.0'
