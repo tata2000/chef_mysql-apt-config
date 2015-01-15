@@ -1,0 +1,31 @@
+{
+  "name": "mysql-apt-config",
+  "description": "Installs/Configures mysql-apt-config",
+  "long_description": "mysql-apt-config Cookbook\n=========================\nThis cookbook install mysql-apt-config\nfrom http://dev.mysql.com/downloads/repo/apt/\n\nRequirements\n------------\n\n#### packages\n- `dpkg_package` - mysql-apt-config needs dpkg_package to install the package downloaded\n\n\nUsage\n-----\n#### mysql-apt-config::default\nJust include `mysql-apt-config` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[mysql-apt-config]\"\n  ]\n}\n```\n\nLicense and Authors\n-------------------\nAuthors:  Tatyana Arenburg\n",
+  "maintainer": "Wix.com",
+  "maintainer_email": "tatyanak@wix.com",
+  "license": "",
+  "platforms": { 
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0",
+  "source_url": "",
+  "issues_url": ""
+}
