@@ -19,8 +19,8 @@ md5 = Digest::MD5.file(local_file_name).hexdigest
 
 if node['mysql-apt-confing']['download_md5']==md5
   dpkg_package local_file_name do
-    action :install
-  end
+    action :nothing
+  end.run_action(:install)
 else
   raise "MD5 does not match. The MD5 of downloaded file is #{md5} and not #{node['mysql-apt-confing']['download_md5']}"
 end
