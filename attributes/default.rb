@@ -8,9 +8,16 @@ default['mysql-apt-confing']['file_name']['ubuntu']['12'] = 'mysql-apt-config_0.
 default['mysql-apt-confing']['md5']['ubuntu']['12'] = '01328fce8160cb8f5d44a2fb3f8e2d56'
 default['mysql-apt-confing']['file_name']['ubuntu']['14'] = 'mysql-apt-config_0.3.2-1ubuntu14.04_all.deb'
 default['mysql-apt-confing']['md5']['ubuntu']['14'] = 'f893b0b1495c6c0458c40320c8f556b0'
+default['mysql-apt-confing']['file_name']['ubuntu']['14.10'] = 'mysql-apt-config_0.3.2-1ubuntu14.10_all.deb'
+default['mysql-apt-confing']['md5']['ubuntu']['14.10'] = 'f684c87394dd1c5aa388378e155adb61'
 
 
+if node['platform'] == 'ubuntu' and Gem::Version.new(node['platform_version'])>=Gem::Version.new('14.10')
+  default['mysql-apt-confing']['download_url'] = node['mysql-apt-confing']['base_url'] + node['mysql-apt-confing']['file_name']['ubuntu']['14.10']
+  default['mysql-apt-confing']['download_md5'] = node['mysql-apt-confing']['md5']['ubuntu']['14']
 
-default['mysql-apt-confing']['download_url'] = node['mysql-apt-confing']['base_url'] +
+else
+  default['mysql-apt-confing']['download_url'] = node['mysql-apt-confing']['base_url'] +
       node['mysql-apt-confing']['file_name'][node['platform']][node['platform_version'].split('.')[0]] 
-default['mysql-apt-confing']['download_md5'] = node['mysql-apt-confing']['md5'][node['platform']][node['platform_version'].split('.')[0]] 
+  default['mysql-apt-confing']['download_md5'] = node['mysql-apt-confing']['md5'][node['platform']][node['platform_version'].split('.')[0]] 
+end
